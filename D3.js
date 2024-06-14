@@ -13,4 +13,12 @@ document. AddEventListener ("DOMContent- Loaded", function (){
                            .append("div")
                            .attr("class", "data-point")
                            .text(d=> d);
-})
+    //add interactivity  
+    d3.selectAll(".data-point")
+          .on("mouseover", function(){
+            d3.select(this).style ("backround-color", "firebrick");
+          })
+             .on("mouseout", function(){
+    d3.select(this).style("backround-color","lightblue");
+             });
+});
